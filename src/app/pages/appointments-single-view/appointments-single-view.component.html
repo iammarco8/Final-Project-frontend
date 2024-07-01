@@ -1,0 +1,38 @@
+<br>
+<div class="container-fluid">
+  <div class="text-bg-primary p-3"></div>
+<div class="container-sm">
+    <div class="row align-items-start">
+      <div class="col">
+        <h2>Patient</h2>
+        <b>Name:</b> {{ schedule?.first_name | titlecase }} {{ schedule?.last_name | titlecase }} <br>
+        <b>Sex:</b> {{ schedule?.sex }} <br>
+        <b>Email:</b> {{ schedule?.email }} <br>
+        {{ schedule?.payments_or_insurance }} <br>
+      </div>
+      <div class="col">
+        <h2>Doctor</h2>
+        <b>Name:</b> {{ schedule?.doctorfirst |titlecase }} {{ schedule?.doctorlast |titlecase }} <br>
+        <b>Derpartment:</b>{{ schedule?.department }}  <br>
+        <b>Specialty:</b> {{ schedule?.specialty }} <br>
+      </div>
+      <div class="col">
+        <h2>Appointment Info</h2>
+        <b>Appointment #:</b> {{id}} <br>
+        <b>Date Of Appointment:</b> {{ schedule?.time | date:'longDate' }} <br>
+        <b>Payment Status:</b> {{ schedule?.payment_status }} <br>
+        <b>Room Assigned:</b> {{ schedule?.roomnum }} (Ward: {{schedule?.ward}}) <br>
+      </div>
+      <div class="col">
+        <h2>Admin</h2>
+        <b>Name:</b> {{ schedule?.adminfirst }} {{ schedule?.adminlast }} <br>
+        <b>Department:</b> {{ schedule?.adminDepartment }} <br>
+      </div>
+      <div class="col">
+        <br>
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/appointments">Return</button><br><br>
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/appointmentsUpdate/{{id}}">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

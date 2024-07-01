@@ -1,0 +1,49 @@
+<h2>Sign up page</h2>
+
+<form (ngSubmit)="createPatient(patientCreationForm)" #patientCreationForm ="ngForm">
+    <div class="row">
+        <div class="col">
+            <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input type="text"  class="form-control" placeholder="First name" aria-label="First name" ngModel name="f_nm">
+        </div>
+        <div class="col">
+            <label for="exampleInputEmail1" class="form-label"> Last name</label>
+          <input type="text" ngModel class="form-control" placeholder="Last name" aria-label="Last name"  name="l_nm">
+        </div>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="sx" id="exampleRadios1" value="M" checked>
+      <label class="form-check-label" for="exampleRadios1">
+      Male
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="sx" id="exampleRadios2" value="F">
+      <label class="form-check-label" for="exampleRadios2">
+        Female
+      </label>
+    </div>
+    <br>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@mail.com" name="eml">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contact Number</label>
+      <input type="tel" ngModel class="form-control" id="exampleInputPassword1" name="phn">
+    </div>
+    
+    <div class="input-group">
+      <span class="input-group-text">Chronic Issues or Allergies</span>
+      <textarea class="form-control" ngModel aria-label="With textarea" 
+      placeholder="We are not responsible any unforseen outcomes as a result of undisclosed information" name="allergy">We are not responsible any unforseen outcomes as a result of undisclosed information</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  <!-- <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
+  </div> -->
+

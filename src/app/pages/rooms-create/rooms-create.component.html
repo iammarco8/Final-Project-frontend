@@ -1,0 +1,33 @@
+<form (ngSubmit)="createRoom(RoomCreationForm)" #RoomCreationForm ="ngForm">
+    <div class="row">
+        <div class="col">
+            <label for="id_num" class="form-label">Room ID</label>
+          <input type="text"  class="form-control" ngModel name="serial_num">
+        </div>
+        <div class="col">
+            <label for="ward" class="form-label"> Ward</label>
+          <input type="text" ngModel class="form-control" name="wrd">
+        </div>
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label for="" class="form-label">floor</label>
+      <input type="text" ngModel class="form-control" id="floor" name="flr">
+    </div>
+
+    <div class="mb-3">
+      <label for="wing" class="form-label">Wing</label>
+      <input type="text" ngModel class="form-control" id="wing" name="wng">
+    </div>
+    
+
+    <div class="mb-3">
+      <label for="availibility_status" class="form-label">Avialability</label>
+      <input type="text" ngModel class="form-control" name="status">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

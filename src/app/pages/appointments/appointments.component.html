@@ -1,0 +1,59 @@
+<br><br><br><br>
+<h2>Appointments</h2>
+
+<ul *ngFor="let meeting of meetingsData" class="list-group list-group-flush text-bg p-3">
+    <div class="text-bg-primary p-3"></div>
+    <!-- <li><b>Appointment #:</b> {{ meeting['id'] }}</li> -->
+    <li class="list-group-item"><b>Payment Status:</b> {{ meeting['payment_status'] }}</li>
+    <li class="list-group-item"><b>Time:</b> {{ meeting['time']| date:'longDate'   }}</li>
+    <li class="list-group-item"><b>Patients:</b> {{ meeting['first_name']|titlecase }} {{ meeting['last_name']|titlecase }}</li>
+    <li class="list-group-item"><b>Sex:</b> {{ meeting['sex'] }}</li>
+    <li class="list-group-item"><b>Chronic Issues/ Allergies:</b> {{ meeting['allergies_or_chronic_issues'] }}</li>
+    <li class="list-group-item"><b>Doctor Assigned:</b>{{ meeting['doctorfirst']|titlecase }} {{ meeting['doctorlast']|titlecase }}</li>
+    <li class="list-group-item"><b>Room:</b> {{ meeting['roomnum'] }}</li>
+    <a routerLink="/appointmentsSingleView/{{meeting['id']}}">Full info</a>
+    <hr>
+</ul>
+
+<div class="tex-indigo-50 hover:bg-blue-700 bg-blue-400 px-2 py-2 text-sm font-semibo ld rounded-l" 
+style="display: flex;  justify-content: center;">
+    <button [ngClass]="{'invisible': currentPage === 1 }" (click)="gotoPage(currentPage! - 1)" class="btn btn-success ">prev</button>
+       
+        <button *ngFor="let page of pageButton | slice: lowerButtonLimit:upperButtonLimit" 
+        style="margin: 10px;"
+        class="btn btn-success "
+        [ngClass]="{'priary-bg text-white': page === currentPage, 'bg-blue-300 text-blue700': page!== currentPage}" 
+        (click)="gotoPage(page)">
+            {{page}}
+        </button>  <hr>
+    
+        <button [ngClass]="{'invisible': currentPage === maxPages }" 
+        (click)="gotoPage(currentPage! + 1)" 
+        class="btn btn-success ">next</button>
+        <br>    
+</div>
+
+<div class="container-sm">
+    <div class="col">
+        <a routerLink="/admins">Admin</a>
+    </div>
+</div>
+
+<div class="container-sm">
+    <div class="col">
+        <a routerLink="/appointmentsCreate">Create Appointment</a>
+    </div>
+</div>
+
+<!-- impliment the pagination -->
+    
+
+<!-- <h2>Doctor</h2>
+<ul *ngFor="let doc of medstaff">
+    <li> <b>Name</b> {{doc['first_name'] |titlecase}} {{doc['last_name'] | titlecase}} </li>
+    <li> {{doc['phone_num']}} </li>
+    <li> {{doc['department']}} </li>
+</ul>
+<h2>Doctor</h2> -->
+    
+    

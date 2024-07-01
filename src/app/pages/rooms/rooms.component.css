@@ -1,0 +1,20 @@
+table{
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+}
+tbody{
+    background-color: azure;
+}
+thead{
+    
+    background-color: #44446a;
+}
+th {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left; 
+    color: #bcbcbc;
+}

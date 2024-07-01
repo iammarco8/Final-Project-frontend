@@ -1,0 +1,47 @@
+<form (ngSubmit)="createDoctors(patientCreationForm)" #patientCreationForm ="ngForm">
+    <div class="row">
+        <div class="col">
+            <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input type="text"  class="form-control" placeholder="First name" aria-label="First name" ngModel name="f_nm">
+        </div>
+        <div class="col">
+            <label for="exampleInputEmail1" class="form-label"> Last name</label>
+          <input type="text" ngModel class="form-control" placeholder="Last name" aria-label="Last name"  name="l_nm">
+        </div>
+    </div>
+
+    <br>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@mail.com" name="eml">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contact Number</label>
+      <input type="tel" ngModel class="form-control" id="exampleInputPassword1" name="p_nbr">
+    </div>
+    
+    <div class="mb-3">
+      <label for="pos" class="form-label">Position</label>
+      <input type="tel" ngModel class="form-control" id="pos" name="pos">
+    </div>
+
+    <div class="mb-3">
+      <label for="dep" class="form-label">Department</label>
+      <input type="tel" ngModel class="form-control" id="dep" name="dep">
+    </div>
+
+    <div class="mb-3">
+      <label for="forte" class="form-label">Specialty</label>
+      <input type="tel" ngModel class="form-control" id="forte" name="forte">
+    </div>
+    
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" ngModel class="form-control" id="exampleInputPassword1" name="pass">
+    </div>
+  
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

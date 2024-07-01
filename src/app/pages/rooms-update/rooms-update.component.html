@@ -1,0 +1,54 @@
+
+<br><br>
+<H2>Changong Room number: {{id}}</H2>
+<form (ngSubmit)="updateroom(roomCreationForm)" #roomCreationForm ="ngForm">
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Room number</label>
+          <input type="text"  class="form-control" placeholder="{{room?.id_num}}" ngModel name="id_num">
+        </div>
+        <div class="col">
+            <label class="form-label"> Ward</label>
+          <input type="text" ngModel class="form-control" placeholder="{{room?.ward}}" name="ward">
+        </div>
+
+    <br>
+
+    <div class="mb-3 col">
+      <label class="form-label">Floor</label>
+      <input type="email" ngModel class="form-control" placeholder="{{room?.floor}}" name="floor">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3 col">
+      <label  class="form-label">Availablity</label>
+      <input type="tel" ngModel class="form-control" placeholder="{{room?.availability_status}}" name="availability_status">
+    </div>
+
+    <div class="mb-3 col">
+      <label  class="form-label">Wing</label>
+      <input type="tel" ngModel class="form-control" placeholder="{{room?.wing}}" name="wing">
+    </div>
+    
+
+    <div class="mb-3 col">
+      <!-- <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" ngModel name="pass">
+    </div> -->
+
+    <!-- <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input type="text" ngModel class="form-control" placeholder="{{room?.position}}" name="pos">
+    </div>
+
+    <div class="mb-3 ">
+        <label class="form-label">Department</label>
+        <input type="text" ngModel class="form-control" placeholder="{{room?.department}}" name="dep">
+    </div> -->
+    
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<br><br>
+<button  type="button" class="btn btn-dark btn-primary btn-lg"  (click)="deleteroom()">Delete?</button>

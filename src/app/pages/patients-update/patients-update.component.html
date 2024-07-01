@@ -1,0 +1,49 @@
+
+<br><br>
+<H2>Changong Patient number: {{id}}</H2>
+<form (ngSubmit)="updatePatient(patientCreationForm)" #patientCreationForm ="ngForm">
+  <div class="row">
+    <div class="col">
+        <label class="form-label">First name</label>
+      <input type="text"  class="form-control" placeholder="{{patient?.first_name}}" ngModel name="f_nm">
+    </div>
+    
+    <div class="col">
+        <label class="form-label"> Last name</label>
+      <input type="text" ngModel class="form-control" placeholder="{{patient?.last_name}}" name="l_nm">
+    </div>
+
+    <br>
+
+    <div class="mb-3 col">
+      <label class="form-label">Email address</label>
+      <input type="email" ngModel class="form-control" placeholder="{{patient?.email}}" name="eml">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3 col">
+      <label  class="form-label">Contact Number</label>
+      <input type="tel" ngModel class="form-control" placeholder="{{patient?.phone_num}}" name="p_nbr">
+    </div>
+    
+
+    <div class="mb-3 col">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" ngModel name="pass">
+    </div>
+
+    <!-- <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input type="text" ngModel class="form-control" placeholder="{{patient?.position}}" name="pos">
+    </div>
+
+    <div class="mb-3 ">
+        <label class="form-label">Department</label>
+        <input type="text" ngModel class="form-control" placeholder="{{patient?.department}}" name="dep">
+    </div> -->
+    
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br><br>
+<button  type="button" class="btn btn-dark btn-primary btn-lg"  (click)="deletePatient()">Delete?</button>

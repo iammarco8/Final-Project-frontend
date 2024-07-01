@@ -1,0 +1,105 @@
+<div class="text-bg-primary p-3"></div>
+<br>
+<div class="container-sm" style="display: flex;">
+    <div id="adminViewList" class="col container-sm" style="padding: 0%; margin: 0%;">
+        <h2>Patient list (short)</h2>
+        <table class="table-primary table-striped">
+            <thead>
+                <th>Name</th>
+                <th>Date Requested</th>
+            </thead>
+            <tbody *ngFor="let person of people">
+                <tr>
+                    <td>{{person['first_name'] | titlecase}} {{person['last_name'] | titlecase }} </td>
+                    <td>this is a test</td>
+                </tr>
+                <hr>
+            </tbody>
+                <a routerLink="/patients">Patients View</a>
+        </table>
+    </div>
+    <div id="adminViewList" class="col container-sm" style="padding: 0%; margin: 0%;">
+        <h2>Doctors (short) </h2>
+        <table class="table-primary table-striped">
+            <thead>
+                <th>Name</th>
+                <th>Specialty</th>
+            </thead>
+            <tbody *ngFor="let doc of medstaff">
+                <tr>
+                    <td>{{doc['first_name'] |titlecase }} {{doc['last_name'] | titlecase}} </td>
+                    <td>{{doc['specialty'] | titlecase }} </td>
+                </tr>
+                <hr>
+            </tbody>
+                <a routerLink="/doctors">Doctor View</a>
+        </table>
+    </div>
+    <div id="adminViewList" class="col container-sm" style="padding: 0%; margin: 0%;">
+        <h2>Rooms (short)</h2>
+        <table class="table-primary table-striped">
+            <thead>
+                <th> Room ID </th>
+                <th>Availability</th>
+            </thead>
+            <tbody *ngFor="let place of area">
+                <tr>
+                    <td> {{place['id_num']}} </td>
+                    <td> {{place['availability_status']}} </td>
+                </tr>
+                <hr>
+            </tbody>
+            <a routerLink="/rooms"> Room Veiw</a>
+        </table>
+    </div>
+</div>
+
+<h2 style="margin: auto; text-align: center;">Admin List</h2>
+
+<div class="col">
+    <a routerLink="/adminsCreate">Create Admin</a>
+</div>
+
+<table class="table-primary table-striped">
+    <thead >
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email Address</th>
+            <th>Position</th>
+            <th>Department</th>
+            <th>   </th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let person of administration">
+        <tr>
+            <td> {{person['id']}} </td>
+            <td> {{person['first_name']}} {{person['last_name']}} </td>
+            <td> {{person['phone_num']}} </td>
+            <td> {{person['email']}} </td>
+            <td> {{person['position']}} </td>
+            <td> {{person['department']}} </td>
+            <td>
+                <button  type="button" class="btn btn-dark btn-primary btn-sm"  routerLink="/adminsUpdate/{{person['id']}}">Edit</button>
+            </td>
+        </tr>
+        <hr>
+    </tbody>
+</table>
+<br>
+<div class="tex-indigo-50 hover:bg-blue-700 bg-blue-400 px-2 py-2 text-sm font-semibo ld rounded-l"
+ style="display: flex;  justify-content: center;">
+    <button [ngClass]="{'invisible': currentPage === 1 }" (click)="gotoPage(currentPage! - 1)" class="btn btn-success ">prev</button>   
+    <button *ngFor="let page of pageButton | slice: lowerButtonLimit:upperButtonLimit" 
+    style="margin: 10px;"
+    class="btn btn-success "
+    [ngClass]="{'priary-bg text-white': page === currentPage, 'bg-blue-300 text-blue700': page!== currentPage}" 
+    (click)="gotoPage(page)">
+        {{page}}
+    </button>  
+    <hr>
+    <button [ngClass]="{'invisible': currentPage === maxPages }" (click)="gotoPage(currentPage! + 1)" class="btn btn-success ">next</button>
+    <br>
+</div>
+<div class="text-bg-primary p-3"></div>

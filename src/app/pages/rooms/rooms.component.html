@@ -1,0 +1,46 @@
+<div class="text-bg-primary p-3"> </div>
+<br>
+<div class="col">
+    <a routerLink="/roomsCreate">Create Room</a>
+</div>
+
+<br>
+<table class="table-primary table-striped">
+    <thead >
+        <tr>
+            <th>ID</th>
+            <th>Room Id</th>
+            <th>Ward</th>
+            <th>Floor Level</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let room of area">
+        <tr>
+            <td> {{room['id']}} </td>
+            <td> {{room['id_num']}} </td>
+            <td> {{room['ward']}} </td>
+            <td> {{room['floor']}} </td>
+            <td>
+                <button  type="button" class="btn btn-dark btn-primary btn-sm" routerLink="/roomsSingleView/{{room['id']}}">
+                    Detailed View
+                </button>
+            </td>
+        </tr>
+        <hr>
+    </tbody>
+</table>
+<div class="tex-indigo-50 hover:bg-blue-700 bg-blue-400 px-2 py-2 text-sm font-semibo ld rounded-l " style="display: flex;  justify-content: center;">
+    <button [ngClass]="{'invisible': currentPage === 1 }" (click)="gotoPage(currentPage! - 1)" class="btn btn-success ">prev</button>
+    
+    <button *ngFor="let page of pageButton | slice: lowerButtonLimit:upperButtonLimit" 
+    style="margin: 10px;"
+    class="btn btn-success "
+    [ngClass]="{'priary-bg text-white': page === currentPage, 'bg-blue-300 text-blue700': page!== currentPage}" 
+    (click)="gotoPage(page)">
+        {{page}}
+    </button>  <hr>
+
+    <button [ngClass]="{'invisible': currentPage === maxPages }" (click)="gotoPage(currentPage! + 1)" class="btn btn-success ">next</button>
+    <br>
+</div>

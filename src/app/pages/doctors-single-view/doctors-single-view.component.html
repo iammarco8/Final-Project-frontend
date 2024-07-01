@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="text-bg-primary p-3"></div>
+    <ul class="list-group list-group-flush text-bg p-3">
+         <li class="list-group-item"><b>Name:</b> {{person?.first_name | titlecase}} {{person?.last_name |titlecase}} </li>
+         <li class="list-group-item"><b>Contact:</b> {{person?.phone_num}} </li>
+         <li class="list-group-item"><B>Position:</B> {{person?.position | titlecase}} </li>
+         <li class="list-group-item"><b>Department:</b> {{person?.department |titlecase}} </li>
+         <li class="list-group-item"><b>Speacialty:</b> {{person?.specialty |titlecase}} </li>
+    </ul>
+    <div class="col">
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/doctors">Return</button><br><br>
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/doctorsUpdate/{{id}}">Edit</button>
+      </div>
+      <div class="text-bg-primary p-3"></div>
+</div>

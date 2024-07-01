@@ -1,0 +1,41 @@
+  <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Health Care <br> Application </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"  id="navbarNavDropdown">
+        <ul class="navbar-nav" style=" margin-left: 60%; float: right;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">More information and FAQ's?</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" routerLink="/admins">Admin page</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" routerLink="/appointments">Appointments</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Request an appiontment?
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/patientsCreate">Sign Up</a></li>
+              <li><a class="dropdown-item" routerLink="{{ loginLink }}">{{loginText}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div> -->
+
+    </div>
+  </nav>

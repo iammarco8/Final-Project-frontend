@@ -1,0 +1,50 @@
+<br><br><br>
+<form (ngSubmit)="makeAppointment(createForm)" #createForm="ngForm" >
+    <label for="patient_Select">Patient Selsect</label>
+    <select name="patient" class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;" ngModel >
+        <option selected>Select one</option>
+        <option *ngFor="let person of patient" [value]="person['id']">
+           {{person['id'] }} {{person['first_name']|titlecase}} {{person['last_name']|titlecase}}
+        </option>
+    </select>
+
+    <label for="doctor_Select"> Select The doctor</label>
+    <select class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;" name="doctor" ngModel>
+        <option *ngFor="let doc of doctor" [value]="doc['id']">
+            {{doc['first_name'] |titlecase}} {{doc['last_name'] |titlecase}} 
+            Specialty: {{doc['specialty']|titlecase}}
+        </option>
+        <br>
+    </select>
+    <label for="room_Select"> Select The Room </label>
+    <select class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;" name="room" ngModel>
+        <option *ngFor="let place of room" [value]="place['id']">
+            {{place['id_num']}} {{place['ward']}} {{place['floor']}}
+        </option>
+    </select>
+    <label for="room_Select"> Select The Admin </label>
+    <select class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;" name="admn" ngModel>
+        <option *ngFor="let person of admin" [value]="person['id']">
+            {{person['first_name']}} {{person['last_name']}} {{person['position']}}
+        </option>
+    </select>
+    
+    <label for="pay_stat">Payment Status</label>
+    <select name="pay_stat" class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;"ngModel>
+        <option value="">select one</option>
+        
+        <option value="unpaid">Unpaid</option>
+        <option value="paid">Paid</option>
+        <option value="pending">Pending</option>
+    </select>
+
+    <label for="unconfirmed">Appointment Confirmation</label>
+    <select name="confirmed" class="form-select" style="width: 30%; border: solid, saddlebrown, 0.5px;" ngModel >
+        <option value="">select one</option>
+        <option value="confirmed">Comfirmed</option>
+        <option value="unconfirmed">Uncomfirmed</option>
+    </select>
+   
+    <br><br><br><br><br>
+    <button type="submit" class="btn btn-success" >"Register"</button>
+</form>

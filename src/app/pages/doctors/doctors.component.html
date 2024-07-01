@@ -1,0 +1,37 @@
+
+<h2>Doctors List</h2>
+
+<a routerLink="/doctorsCreate">Create Doctor</a>
+<ul class="list-group list-group-flush text-bg p-3" *ngFor="let doc of medstaff">
+    <li class="list-group-item"> <b>ID:</b> {{doc['id'] }} </li>
+    <li class="list-group-item"> <b>Name:</b> {{doc['first_name'] |titlecase}} {{doc['last_name'] | titlecase}} </li>
+    <li class="list-group-item"> <b>Contact:</b> {{doc['phone_num']}} </li>
+    <li class="list-group-item"> <b>Department:</b> {{doc['department'] | titlecase}} </li>
+    <a routerLink="/doctorsSingleView/{{doc['id']}}">Full info</a>
+    <div class="text-bg-primary p-3"></div>
+</ul>
+<div class="tex-indigo-50 hover:bg-blue-700 bg-blue-400 px-2 py-2 text-sm font-semibo ld rounded-l " style="display: flex;  justify-content: center;">
+        <!-- *ngIf="maxPages > 1"
+        [maxPages]=" maxPages"
+        [currentPages]="filters.page || 1"
+        (pageChange)="gotoPage($even)">
+         -->
+    <button [ngClass]="{'invisible': currentPage === 1 }" (click)="gotoPage(currentPage! - 1)" class="btn btn-success ">prev</button>
+   
+    <button *ngFor="let page of pageButton | slice: lowerButtonLimit:upperButtonLimit" 
+    style="margin: 10px;"
+    class="btn btn-success "
+    [ngClass]="{'priary-bg text-white': page === currentPage, 'bg-blue-300 text-blue700': page!== currentPage}" 
+    (click)="gotoPage(page)">
+        {{page}}
+    </button>  <hr>
+
+    <button [ngClass]="{'invisible': currentPage === maxPages }" (click)="gotoPage(currentPage! + 1)" class="btn btn-success ">next</button>
+    <br>
+    
+</div>
+<div class="container-sm">
+    <div class="col">
+        <a routerLink="/admins">Admin</a>
+    </div>
+</div>

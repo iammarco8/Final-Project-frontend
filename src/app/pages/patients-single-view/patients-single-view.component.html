@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="text-bg-primary p-3"></div>
+    <ul class="list-group list-group-flush text-bg p-3">
+         <li class="list-group-item"><b>Name:</b> {{person?.first_name | titlecase}} {{person?.last_name |titlecase}} </li>
+         <li class="list-group-item"><b>Contact:</b> {{person?.phone_num}} </li>
+         <li class="list-group-item"><B>Sex:</B> {{person?.sex | titlecase}} </li>
+         <li class="list-group-item"><b>Department:</b> {{person?.email |titlecase}} </li>
+         <li class="list-group-item"><b>Chronic illnesses or Allergies:</b> {{person?.allergies_or_chronic_issues |titlecase}} </li>
+         <li class="list-group-item"><b>Current Treatments program:</b> {{person?.current_treatments |titlecase}} </li>
+         <li class="list-group-item"><b>Med history link:</b> {{person?.med_history |titlecase}} <i style="color:blue ;">(this should be a link to a pdf for further development)</i></li>
+         <li class="list-group-item"><b>Latest Medical review and doctors comments:</b> {{person?.doctors_comments |titlecase}} <i style="color:blue ;">(this should be a link to a pdf for further development)</i></li>
+         <li class="list-group-item"><b>Payment information:</b> {{person?.payment_or_insurance |titlecase}} <i style="color:blue ;">(this should be a link to a pdf for further development)</i></li>
+    </ul>
+    <div class="col">
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/patients">Return</button><br><br>
+        <button  type="button" class="btn btn-dark btn-primary btn-lg"  routerLink="/patientsUpdate/{{id}}">Edit</button>
+      </div>
+      <div class="text-bg-primary p-3"></div>
+</div>

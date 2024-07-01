@@ -1,0 +1,65 @@
+#darkorchid{
+    color:#bb1cfa
+}
+#darkorchid_background{
+    background-color:#bb1cfa
+}
+
+#plum{
+    color: #e8a4ee;
+}
+#plum_background{
+    background-color: #e8a4ee;
+}
+#midnightblue{
+    color: #240f5a;
+}
+#midnightblue_background{
+    background-color: #240f5a;
+}
+#slateblue{
+    color: #766798;
+}
+#slateblue_background{
+    background-color: #766798;
+}
+#Silver{
+    color: #bcbcbc;
+}
+#Silver_background{
+    background-color: #bcbcbc;
+}
+#darkslateblue {
+    color: #44446a;
+}
+#darkslateblue_background {
+    background-color: #44446a;
+}
+table{
+    /* text-align: left; */
+    /* overflow: hidden; */
+    /* width: 33%; */
+    margin: 0 auto;
+    /* display: table; */
+}
+tbody{
+    background-color: azure;
+}
+thead{
+    text-align: center;
+    background-color: #44446a;
+}
+th {
+    font-weight: bold;
+    font-size: 1em;
+    /* text-align: left;  */
+    color: #bcbcbc;
+}
+td{
+    text-align: center;
+}
+#adminViewList h2{
+    text-align: center;
+    color: #e8a4ee;
+    background-color: #240f5a;
+}

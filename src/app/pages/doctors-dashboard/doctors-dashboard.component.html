@@ -1,0 +1,48 @@
+<!-- <h2>Welcome Dr. {{doc.last_name}}</h2> -->
+
+<div class="container-sm" style="display: flex;">
+    <div class="col content-sm">
+        <!-- <h2>Upcomming Appointments</h2>
+        <table class="table-primary table-striped">
+            <thead>
+                <th>Patient name</th>
+                <th>Appointment time</th>
+                <th>Room</th>
+                <th>Details</th>
+            </thead>
+            <h1>start</h1>
+            <tbody *ngFor="let meeting of meetings">
+                <tr>
+                    <td>
+                        {{meeting.first_name}}
+                    </td>
+                </tr>
+            </tbody>
+
+            <div class="tex-indigo-50 hover:bg-blue-700 bg-blue-400 px-2 py-2 text-sm font-semibo ld rounded-l" 
+            style="display: flex;  justify-content: center;">
+            
+                <button [ngClass]="{'invisible': currentPage === 1 }" (click)="gotoPage(currentPage! - 1)" class="btn btn-success ">
+                    prev
+                </button>
+        
+                <button *ngFor="let page of pageButton | slice: lowerButtonLimit:upperButtonLimit" 
+                style="margin: 10px;"
+                class="btn btn-success "
+                [ngClass]="{'priary-bg text-white': page === currentPage, 'bg-blue-300 text-blue700': page!== currentPage}" 
+                (click)="gotoPage(page)">
+                    {{page}}
+                </button>  <hr>
+        
+                <button [ngClass]="{'invisible': currentPage === maxPages }" 
+                (click)="gotoPage(currentPage! + 1)" 
+                class="btn btn-success ">
+                    next
+                </button>
+                <br>    
+            </div>
+
+            <h1>stop</h1>
+        </table> -->
+    </div>
+</div>
